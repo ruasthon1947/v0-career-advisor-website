@@ -5,9 +5,6 @@ import Link from "next/link"
 
 import React from "react";
 
-import React from "react";
-
-// Define the data
 const careerPaths = [
   {
     title: "Frontend Developer",
@@ -25,7 +22,7 @@ const careerPaths = [
   },
 ];
 
-// Define which skills should be blue
+
 const blueSkills = ["html", "react", "javascript", "css", "typescript"];
 
 // Functional component

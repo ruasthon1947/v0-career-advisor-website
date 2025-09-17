@@ -2,15 +2,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Code, Server, Globe, Shield, Cloud, Network, Cpu, BarChart3, Zap } from "lucide-react"
 import Link from "next/link"
-import React from "react"
 
 const careerPaths = [
   {
     title: "Frontend Developer",
     description: "Build beautiful, interactive user interfaces",
-    icon: Code, // added an icon here so it’s not null
-    growth: "+15%",
-    category: "frontend",
+    icon: Code,
     skills: [
       { name: "HTML", slug: "html" },
       { name: "React", slug: "react" },
@@ -18,6 +15,8 @@ const careerPaths = [
       { name: "CSS", slug: "css" },
       { name: "TypeScript", slug: "typescript" },
     ],
+    growth: "+15%",
+    category: "frontend",
   },
   {
     title: "Backend Developer",
@@ -50,7 +49,7 @@ const careerPaths = [
     description: "Protect systems and data from threats",
     icon: Shield,
     skills: [
-      { name: "Security", slug: "security" },
+      { name: "Security Protocols", slug: "security-protocols" },
       { name: "Penetration Testing", slug: "penetration-testing" },
       { name: "Risk Assessment", slug: "risk-assessment" },
     ],
@@ -87,9 +86,10 @@ const careerPaths = [
     description: "Build connected device solutions",
     icon: Cpu,
     skills: [
-      { name: "Embedded Systems", slug: "embedded-systems" },
-      { name: "Sensors", slug: "sensors" },
-      { name: "Connectivity", slug: "connectivity" },
+      { name: "Arduino", slug: "arduino" },
+      { name: "Raspberry Pi", slug: "raspberry-pi" },
+      { name: "MQTT", slug: "mqtt" },
+      { name: "Edge Computing", slug: "edge-computing" },
     ],
     growth: "+28%",
     category: "iot",
@@ -101,8 +101,8 @@ const careerPaths = [
     skills: [
       { name: "SQL", slug: "sql" },
       { name: "Python", slug: "python" },
-      { name: "Visualization", slug: "visualization" },
-      { name: "Statistics", slug: "statistics" },
+      { name: "Tableau", slug: "tableau" },
+      { name: "Excel", slug: "excel" },
     ],
     growth: "+16%",
     category: "data-analysis",
@@ -112,9 +112,10 @@ const careerPaths = [
     description: "Optimize AI model interactions and outputs",
     icon: Zap,
     skills: [
-      { name: "AI/ML", slug: "ai-ml" },
-      { name: "Natural Language", slug: "natural-language" },
-      { name: "Model Training", slug: "model-training" },
+      { name: "GPT", slug: "gpt" },
+      { name: "Claude", slug: "claude" },
+      { name: "LangChain", slug: "langchain" },
+      { name: "AI Ethics", slug: "ai-ethics" },
     ],
     growth: "+35%",
     category: "prompt-engineering",

@@ -13,7 +13,7 @@ export function Header() {
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">C</span>
             </div>
-            <span className="font-bold text-xl">CareerPath</span>
+            <span className="font-quantico text-xl">Next Gen Career</span>
           </Link>
         </div>
 

@@ -99,7 +99,7 @@ export function LearningPathCard({ path }: LearningPathCardProps) {
             size="sm"
             className="hover:bg-secondary/10 transition-colors duration-200 bg-transparent"
           >
-            Preview
+            Certificate
           </Button>
         </div>
       </CardContent>

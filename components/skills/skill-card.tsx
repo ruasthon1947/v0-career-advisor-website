@@ -1,8 +1,11 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Clock, Users, TrendingUp, BookOpen } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 interface Skill {
   id: number
@@ -24,6 +27,25 @@ interface SkillCardProps {
 }
 
 export function SkillCard({ skill }: SkillCardProps) {
+  const router = useRouter()
+
+  const getResourceUrl = (skillName: string) => {
+    const skillMap: { [key: string]: string } = {
+      React: "react",
+      Python: "python",
+      "AWS Cloud": "cloud-computing",
+      "Machine Learning": "machine-learning",
+      Cybersecurity: "cybersecurity",
+      Docker: "docker",
+    }
+    return skillMap[skillName] || skillName.toLowerCase().replace(/\s+/g, "-")
+  }
+
+  const handleStartLearning = () => {
+    const resourcePath = getResourceUrl(skill.name)
+    router.push(`/resources/${resourcePath}`)
+  }
+
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case "Beginner":
@@ -119,7 +141,11 @@ export function SkillCard({ skill }: SkillCardProps) {
         </div>
 
         <div className="flex space-x-2 pt-2">
-          <Button size="sm" className="flex-1 hover:bg-primary/90 transition-colors duration-200">
+          <Button
+            size="sm"
+            className="flex-1 hover:bg-primary/90 transition-colors duration-200"
+            onClick={handleStartLearning}
+          >
             Start Learning
           </Button>
           <Button

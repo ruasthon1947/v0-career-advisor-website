@@ -51,31 +51,45 @@ export function Footer() {
                   Career Guidance
                 </Link>
               </li>
-              
+              <li>
+                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+                  Blog
+                </Link>
+              </li>
               <li>
                 <Link href="/success-stories" className="text-muted-foreground hover:text-primary transition-colors">
                   Success Stories
                 </Link>
               </li>
+              <li>
+                <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
-          <div>
+          <div id="contact">
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
-                  Contact Us : +91 9098909890
+                  Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/email" className="text-muted-foreground hover:text-primary transition-colors">
-                  Email : ruasthon@gmail.com
+                <Link href="/help" className="text-muted-foreground hover:text-primary transition-colors">
+                  Help Center
                 </Link>
               </li>
               <li>
-                <Link href="/country" className="text-muted-foreground hover:text-primary transition-colors">
-                  Bengaluru, INDIA
+                <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+                  Terms of Service
                 </Link>
               </li>
             </ul>
@@ -83,7 +97,7 @@ export function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 CareerPath. All rights reserved.</p>
+          <p>&copy; 2024 CareerPath. All rights reserved.</p>
         </div>
       </div>
     </footer>

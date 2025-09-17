@@ -1,41 +1,63 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Brain, Target, Users, BookOpen, MessageCircle, TrendingUp } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 const features = [
   {
-    title: "AI-Powered Assessment",
+    title: "AI-Powered Assistant",
     description:
       "Take our comprehensive career assessment to discover paths that match your interests, skills, and goals.",
     icon: Brain,
+    onClick: "/assessment",
   },
   {
     title: "Personalized Roadmaps",
     description: "Get custom learning paths with milestones, skill recommendations, and progress tracking.",
     icon: Target,
+    onClick: "/roadmaps",
   },
   {
-    title: "Expert Mentorship",
+    title: "Guidance",
     description: "Connect with industry professionals for one-on-one guidance and career advice.",
     icon: Users,
+    onClick: "/guidance",
   },
   {
     title: "Curated Learning",
     description: "Access handpicked courses, certifications, and resources tailored to your career goals.",
     icon: BookOpen,
+    onClick: "/curated-learning",
   },
   {
     title: "Community Support",
     description: "Join a community of learners and professionals sharing experiences and insights.",
     icon: MessageCircle,
+    onClick: "#contact",
   },
   {
     title: "Progress Tracking",
     description: "Monitor your skill development and career advancement with detailed analytics.",
     icon: TrendingUp,
+    onClick: "/dashboard",
   },
 ]
 
 export function FeaturesSection() {
+  const router = useRouter()
+
+  const handleFeatureClick = (path: string) => {
+    if (path.startsWith("#")) {
+      // Scroll to section
+      const element = document.querySelector(path)
+      element?.scrollIntoView({ behavior: "smooth" })
+    } else {
+      // Navigate to page
+      router.push(path)
+    }
+  }
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -52,7 +74,8 @@ export function FeaturesSection() {
             return (
               <Card
                 key={index}
-                className="border-border/50 hover:shadow-md transition-all duration-300 hover:scale-105"
+                className="border-border/50 hover:shadow-md transition-all duration-300 hover:scale-105 cursor-pointer"
+                onClick={() => handleFeatureClick(feature.onClick)}
               >
                 <CardContent className="p-6 text-center">
                   <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">

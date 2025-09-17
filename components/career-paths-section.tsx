@@ -15,7 +15,6 @@ const careerPaths = [
       { name: "CSS", slug: "css" },
       { name: "TypeScript", slug: "typescript" },
     ],
-    growth: "+15%",
     category: "frontend",
   },
   {
@@ -28,7 +27,6 @@ const careerPaths = [
       { name: "Databases", slug: "databases" },
       { name: "APIs", slug: "apis" },
     ],
-    growth: "+12%",
     category: "backend",
   },
   {
@@ -41,7 +39,6 @@ const careerPaths = [
       { name: "Databases", slug: "databases" },
       { name: "DevOps", slug: "devops" },
     ],
-    growth: "+18%",
     category: "fullstack",
   },
   {
@@ -53,7 +50,6 @@ const careerPaths = [
       { name: "Penetration Testing", slug: "penetration-testing" },
       { name: "Risk Assessment", slug: "risk-assessment" },
     ],
-    growth: "+22%",
     category: "cybersecurity",
   },
   {
@@ -66,7 +62,6 @@ const careerPaths = [
       { name: "Docker", slug: "docker" },
       { name: "Kubernetes", slug: "kubernetes" },
     ],
-    growth: "+25%",
     category: "cloud",
   },
   {
@@ -78,7 +73,6 @@ const careerPaths = [
       { name: "Scalability", slug: "scalability" },
       { name: "Microservices", slug: "microservices" },
     ],
-    growth: "+20%",
     category: "system-design",
   },
   {
@@ -91,7 +85,6 @@ const careerPaths = [
       { name: "MQTT", slug: "mqtt" },
       { name: "Edge Computing", slug: "edge-computing" },
     ],
-    growth: "+28%",
     category: "iot",
   },
   {
@@ -104,7 +97,6 @@ const careerPaths = [
       { name: "Tableau", slug: "tableau" },
       { name: "Excel", slug: "excel" },
     ],
-    growth: "+16%",
     category: "data-analysis",
   },
   {
@@ -117,7 +109,6 @@ const careerPaths = [
       { name: "LangChain", slug: "langchain" },
       { name: "AI Ethics", slug: "ai-ethics" },
     ],
-    growth: "+35%",
     category: "prompt-engineering",
   },
 ]

@@ -1,7 +1,9 @@
+"use client"
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Clock } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 interface SuccessStory {
   id: number
@@ -12,6 +14,7 @@ interface SuccessStory {
   story: string
   skills: string[]
   image: string
+  fullStory?: string
 }
 
 interface SuccessStoryCardProps {
@@ -19,6 +22,12 @@ interface SuccessStoryCardProps {
 }
 
 export function SuccessStoryCard({ story }: SuccessStoryCardProps) {
+  const handleReadFullStory = () => {
+    if (story.fullStory) {
+      alert(story.fullStory)
+    }
+  }
+
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50">
       <CardHeader className="space-y-4">
@@ -33,12 +42,6 @@ export function SuccessStoryCard({ story }: SuccessStoryCardProps) {
             <div className="space-y-1 text-sm">
               <p className="text-muted-foreground">From: {story.previousRole}</p>
               <p className="font-medium text-primary">To: {story.currentRole}</p>
-            </div>
-          </div>
-          <div className="text-right">
-            <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-              <Clock className="h-4 w-4" />
-              <span>{story.timeframe}</span>
             </div>
           </div>
         </div>
@@ -63,6 +66,7 @@ export function SuccessStoryCard({ story }: SuccessStoryCardProps) {
           variant="outline"
           size="sm"
           className="w-full hover:bg-secondary/10 transition-colors duration-200 bg-transparent"
+          onClick={handleReadFullStory}
         >
           Read Full Story
           <ArrowRight className="ml-2 h-4 w-4" />

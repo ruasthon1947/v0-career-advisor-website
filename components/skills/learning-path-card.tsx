@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -22,25 +24,35 @@ interface LearningPathCardProps {
 }
 
 export function LearningPathCard({ path }: LearningPathCardProps) {
+  const handleCertificateClick = () => {
+    // Redirect to the certificate image
+    window.open("/certificate-preview.jpg", "_blank")
+  }
+
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50">
       <CardHeader className="space-y-3">
         <div className="flex items-start justify-between">
           <div className="space-y-2">
             <CardTitle className="text-xl group-hover:text-primary transition-colors">{path.title}</CardTitle>
-            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-              <div className="flex items-center space-x-1">
-                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                <span>{path.rating}</span>
+            {path.title !== "Frontend Developer Path" && (
+              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                <div className="flex items-center space-x-1">
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <span>{path.rating}</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <Users className="h-4 w-4" />
+                  <span>{path.students} students</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-1">
-                <Users className="h-4 w-4" />
-                <span>{path.students} students</span>
-              </div>
-            </div>
+            )}
           </div>
           {path.certificate && (
-            <Badge className="bg-primary/10 text-primary border-primary/20">
+            <Badge
+              className="bg-primary/10 text-primary border-primary/20 cursor-pointer hover:bg-primary/20 transition-colors"
+              onClick={handleCertificateClick}
+            >
               <Award className="h-3 w-3 mr-1" />
               Certificate
             </Badge>
@@ -50,29 +62,33 @@ export function LearningPathCard({ path }: LearningPathCardProps) {
       </CardHeader>
 
       <CardContent className="space-y-4">
-        <div className="grid grid-cols-2 gap-4 text-sm">
-          <div className="flex items-center space-x-2">
-            <Clock className="h-4 w-4 text-muted-foreground" />
-            <span>{path.duration}</span>
+        {path.title !== "Frontend Developer Path" && (
+          <div className="grid grid-cols-2 gap-4 text-sm">
+            <div className="flex items-center space-x-2">
+              <Clock className="h-4 w-4 text-muted-foreground" />
+              <span>{path.duration}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <BookOpen className="h-4 w-4 text-muted-foreground" />
+              <span>{path.modules} modules</span>
+            </div>
           </div>
-          <div className="flex items-center space-x-2">
-            <BookOpen className="h-4 w-4 text-muted-foreground" />
-            <span>{path.modules} modules</span>
-          </div>
-        </div>
+        )}
 
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium">Level</span>
-            <Badge variant="outline" className="text-xs">
-              {path.level}
-            </Badge>
+        {path.title !== "Frontend Developer Path" && (
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium">Level</span>
+              <Badge variant="outline" className="text-xs">
+                {path.level}
+              </Badge>
+            </div>
+            <div className="text-sm">
+              <span className="font-medium">Projects: </span>
+              <span className="text-muted-foreground">{path.projects} hands-on projects</span>
+            </div>
           </div>
-          <div className="text-sm">
-            <span className="font-medium">Projects: </span>
-            <span className="text-muted-foreground">{path.projects} hands-on projects</span>
-          </div>
-        </div>
+        )}
 
         <div className="space-y-2">
           <span className="text-sm font-medium">Skills You'll Learn:</span>
@@ -99,7 +115,7 @@ export function LearningPathCard({ path }: LearningPathCardProps) {
             size="sm"
             className="hover:bg-secondary/10 transition-colors duration-200 bg-transparent"
           >
-            Certificate
+            Preview
           </Button>
         </div>
       </CardContent>

@@ -93,36 +93,39 @@ const articles = [
 const successStories = [
   {
     id: 1,
-    name: "Jessica Martinez",
+    name: "Rohit",
     previousRole: "Marketing Coordinator",
-    currentRole: "Frontend Developer at Spotify",
-    timeframe: "8 months",
+    currentRole: "Frontend Developer at IBM",
     story:
-      "After feeling unfulfilled in marketing, I discovered my passion for coding through CareerPath's assessment. The structured learning path and mentorship helped me transition successfully.",
+      "After feeling unfulfilled in marketing, I discovered my passion for coding through Next Gen Career's assessment. The structured learning path and mentorship helped me transition successfully.",
     skills: ["React", "JavaScript", "CSS"],
-    image: "/professional-woman-developer.png",
+    image: "/professional-man-developer.png",
+    fullStory:
+      "Rohit learned everything about React, JavaScript, and CSS through our comprehensive frontend development program.",
   },
   {
     id: 2,
     name: "Marcus Johnson",
     previousRole: "Retail Manager",
-    currentRole: "Full Stack Developer at Shopify",
-    timeframe: "10 months",
+    currentRole: "Full Stack Developer at Google",
     story:
       "I never thought I could learn to code, but the personalized roadmap made it achievable. Now I'm building e-commerce solutions and loving every day of work.",
     skills: ["Node.js", "React", "MongoDB"],
     image: "/professional-man-developer.png",
+    fullStory:
+      "Marcus learned everything about Node.js, React, and MongoDB through our intensive full-stack development program.",
   },
   {
     id: 3,
     name: "Priya Patel",
     previousRole: "Data Analyst",
-    currentRole: "Machine Learning Engineer at Tesla",
-    timeframe: "12 months",
+    currentRole: "Machine Learning Engineer at Wipro",
     story:
       "The AI/ML learning path was exactly what I needed to advance my career. The hands-on projects and expert mentorship were game-changers.",
     skills: ["Python", "TensorFlow", "Data Science"],
     image: "/professional-woman-data-scientist.png",
+    fullStory:
+      "Priya learned everything about Python, TensorFlow, and Data Science through our advanced machine learning curriculum.",
   },
 ]
 

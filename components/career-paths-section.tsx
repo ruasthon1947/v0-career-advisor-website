@@ -5,11 +5,16 @@ import Link from "next/link"
 
 import React from "react";
 
+import React from "react";
+
+// Define the data
 const careerPaths = [
   {
     title: "Frontend Developer",
     description: "Build beautiful, interactive user interfaces",
-    icon: null, // Replace with actual icon component if available
+    icon: null, // Replace with actual icon component if needed
+    growth: "+15%",
+    category: "frontend",
     skills: [
       { name: "HTML", slug: "html" },
       { name: "React", slug: "react" },
@@ -20,15 +25,32 @@ const careerPaths = [
   },
 ];
 
+// Define which skills should be blue
 const blueSkills = ["html", "react", "javascript", "css", "typescript"];
 
+// Functional component
 const CareerPaths: React.FC = () => {
   return (
     <div>
       {careerPaths.map((path, index) => (
-        <div key={index} style={{ marginBottom: "20px" }}>
+        <div
+          key={index}
+          style={{
+            marginBottom: "20px",
+            padding: "16px",
+            border: "1px solid #ddd",
+            borderRadius: "8px",
+          }}
+        >
           <h2>{path.title}</h2>
           <p>{path.description}</p>
+          <p>
+            <strong>Growth:</strong> {path.growth}
+          </p>
+          <p>
+            <strong>Category:</strong> {path.category}
+          </p>
+
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
             {path.skills.map((skill, i) => (
               <button
@@ -42,6 +64,7 @@ const CareerPaths: React.FC = () => {
                     : "#ccc",
                   color: "#fff",
                   cursor: "pointer",
+                  fontWeight: "bold",
                 }}
               >
                 {skill.name}
@@ -56,9 +79,6 @@ const CareerPaths: React.FC = () => {
 
 export default CareerPaths;
 
-    growth: "+15%",
-    category: "frontend",
-  },
   {
     title: "Backend Developer",
     description: "Create robust server-side applications",

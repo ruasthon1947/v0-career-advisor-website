@@ -3,11 +3,13 @@ import { Button } from "@/components/ui/button"
 import { Code, Server, Globe, Shield, Cloud, Network, Cpu, BarChart3, Zap } from "lucide-react"
 import Link from "next/link"
 
+import React from "react";
+
 const careerPaths = [
   {
     title: "Frontend Developer",
     description: "Build beautiful, interactive user interfaces",
-    icon: Code,
+    icon: null, // Replace with actual icon component if available
     skills: [
       { name: "HTML", slug: "html" },
       { name: "React", slug: "react" },
@@ -15,6 +17,45 @@ const careerPaths = [
       { name: "CSS", slug: "css" },
       { name: "TypeScript", slug: "typescript" },
     ],
+  },
+];
+
+const blueSkills = ["html", "react", "javascript", "css", "typescript"];
+
+const CareerPaths: React.FC = () => {
+  return (
+    <div>
+      {careerPaths.map((path, index) => (
+        <div key={index} style={{ marginBottom: "20px" }}>
+          <h2>{path.title}</h2>
+          <p>{path.description}</p>
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+            {path.skills.map((skill, i) => (
+              <button
+                key={i}
+                style={{
+                  padding: "8px 12px",
+                  border: "none",
+                  borderRadius: "4px",
+                  backgroundColor: blueSkills.includes(skill.slug)
+                    ? "#007BFF"
+                    : "#ccc",
+                  color: "#fff",
+                  cursor: "pointer",
+                }}
+              >
+                {skill.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default CareerPaths;
+
     growth: "+15%",
     category: "frontend",
   },

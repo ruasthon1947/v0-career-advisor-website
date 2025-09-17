@@ -41,8 +41,8 @@
 }
 
 .dark {
-  /* Updated dark mode colors to gradient bluish purple */
-  --background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+  /* Fixed dark mode colors - removed gradient from CSS custom property */
+  --background: #1e1b4b;
   --foreground: #f1f5f9;
   --card: rgba(30, 27, 75, 0.8);
   --card-foreground: #f1f5f9;
@@ -124,7 +124,7 @@
   body {
     @apply bg-background text-foreground;
   }
-  /* Added gradient background for dark mode */
+  /* Applied gradient background directly to dark mode body */
   .dark body {
     background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
     background-attachment: fixed;

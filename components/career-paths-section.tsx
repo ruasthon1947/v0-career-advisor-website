@@ -2,15 +2,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Code, Server, Globe, Shield, Cloud, Network, Cpu, BarChart3, Zap } from "lucide-react"
 import Link from "next/link"
+import React from "react"
 
-import React from "react";
-
-// Step 1: Data
 const careerPaths = [
   {
     title: "Frontend Developer",
     description: "Build beautiful, interactive user interfaces",
-    icon: null,
+    icon: Code, // added an icon here so it’s not null
     growth: "+15%",
     category: "frontend",
     skills: [
@@ -21,55 +19,6 @@ const careerPaths = [
       { name: "TypeScript", slug: "typescript" },
     ],
   },
-  {
-    title: "Backend Developer",
-    description: "Create robust server-side applications",
-    icon: null, // Replace with Server if you import it
-    skills: [
-      { name: "Node.js", slug: "nodejs" },
-      { name: "Express", slug: "express" },
-      { name: "MongoDB", slug: "mongodb" },
-      { name: "SQL", slug: "sql" },
-    ],
-  },
-];
-
-// Step 2: Component
-const blueSkills = ["html", "react", "javascript", "css", "typescript"];
-
-const CareerPaths: React.FC = () => {
-  return (
-    <div>
-      {careerPaths.map((path, index) => (
-        <div key={index} style={{ marginBottom: "20px", padding: "16px", border: "1px solid #ccc", borderRadius: "8px" }}>
-          <h2>{path.title}</h2>
-          <p>{path.description}</p>
-          <p>Growth: {path.growth || "N/A"}</p>
-          <p>Category: {path.category || "N/A"}</p>
-          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-            {path.skills.map((skill, i) => (
-              <button
-                key={i}
-                style={{
-                  padding: "8px 12px",
-                  borderRadius: "4px",
-                  border: "none",
-                  color: "#fff",
-                  backgroundColor: blueSkills.includes(skill.slug) ? "#007BFF" : "#888",
-                }}
-              >
-                {skill.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default CareerPaths;
-
   {
     title: "Backend Developer",
     description: "Create robust server-side applications",
